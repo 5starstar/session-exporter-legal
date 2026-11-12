@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Session Exporter for Claude Code (unofficial) – Privacy Policy</title>
+  <style>
+    body { font: 16px/1.6 system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 1.8rem; }
+    code { background: #f1f1f1; padding: 0 .3em; border-radius: 3px; }
+    nav a { margin-right: 1rem; }
+    @media (prefers-color-scheme: dark) { body { background: #111; color: #e6e6e6; } code { background: #222; } a { color: #8ab4f8; } }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html">Home</a><a href="support.html">Support</a></nav>
+<h1>Session Exporter for Claude Code (unofficial) – Privacy Policy</h1>
+<p><strong>Effective date:</strong> November 10, 2026 (covers version 0.10.0 and later until this page is updated) · <strong>Maker:</strong> 5starstar · <strong>Contact:</strong> <a href="mailto:charmszaku@gmail.com">charmszaku@gmail.com</a></p>
+<p><em>Session Exporter for Claude Code (unofficial) is a Chrome and Edge extension that saves the Claude Code session or the claude.ai chat you have open as a file on your own computer. It is an independent project. It is not made, endorsed or supported by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic. The small companion character in the popup is the maker's own creation, made with Google Flow (an AI image tool); it is not an official Anthropic or Claude mascot.</em></p>
+<h2>The short version</h2>
+<p>The extension handles the text of the session or chat you ask it to export <strong>on your device only</strong>, to make the file you asked for. <strong>It does not collect it, keep it, or send it to the maker or to anyone else.</strong> It has no server, no account, no analytics and no advertising. The only network requests it can make go to claude.ai, the site you are already using, to read your own session or chat (see "Network requests").</p>
+<h2>What it reads, and when</h2>
+<ul>
+<li><strong>Only when you click.</strong> Nothing happens in the background, and nothing happens on a page you have not opened the extension on. The extension has no background worker.</li>
+<li><strong>It reads the session or chat open in that tab</strong>, at <code>claude.ai/code/...</code> or <code>claude.ai/chat/...</code>: your messages, Claude's replies, tool steps and their results, files Claude made, and the names of attached files. This is content you already see on your screen. It also reads the page's title and address, to name the file and to know which kind of page it is.</li>
+<li><strong>It reads one cookie value, and only when it reads data from claude.ai directly</strong> (a chat, or a Code session in Fast mode): your organisation id, which is needed to address the request. It does not read, copy or store your session token or your password.</li>
+</ul>
+<h2>Network requests</h2>
+<ul>
+<li><strong>Chats</strong> are read in one way only: <strong>one read-only request (GET) to claude.ai</strong> for that chat's own data, made with your already signed-in session, after you have confirmed it once. If it fails, nothing is saved.</li>
+<li><strong>Claude Code sessions</strong> have two ways of being read. <em>Reading the page</em> (the default) scrolls and reads what the page shows and <strong>makes no network request of its own</strong> (the page may load older messages while it scrolls, exactly as it does when you scroll yourself). <em>Fast mode</em> (off by default; you turn it on after reading a warning) asks <strong>claude.ai</strong> for the session's own data, read-only, with your already signed-in session.</li>
+<li><strong>Files shown in a chat or session:</strong> if you choose to save them, the extension starts ordinary browser downloads of those files from claude.ai links, after asking you.</li>
+<li><strong>Nothing is sent to any other site, and nothing is sent to the maker.</strong> Only two files of the extension can make a network request at all, both only to claude.ai; the automated tests that build the package fail if any other file could.</li>
+<li>The extension also reads its own bundled picture files. They are inside the installed package and are not requests to the internet.</li>
+</ul>
+<h2>What it stores on your device</h2>
+<p>Only small settings and counters in the popup's own storage (the extension's <code>localStorage</code>, not any website's). They are never sent anywhere and are not synced.</p>
+<ul>
+<li><strong>Your choices</strong> in the popup: the goal, the format, whether you confirmed Fast mode, and similar options.</li>
+<li><strong>The companion's memory:</strong> whether the companion is switched on or off, and which line and picture it showed last, so it does not repeat itself.</li>
+<li><strong>Small counters and flags:</strong> how many exports you have started (a number only), whether you went to the tip page or said "No thanks", when she last asked, and whether you said "No thanks" to the Fast mode advice. They exist so that the companion asks rarely, says thank you once, and never asks again after you have visited.</li>
+<li><strong>Whether you hid the tip card.</strong></li>
+</ul>
+<p>Nothing in it says what you exported. It is deleted when you uninstall the extension. The extension does not keep your sessions, a history of exports, or any identifier.</p>
+<h2>What it creates</h2>
+<p>The export file (Markdown, HTML, JSON, text or a zip) is made <strong>on your computer</strong> and saved through your browser's normal download. Where it goes after that is up to you. <strong>Exports can contain everything in the session</strong>, including commands, file paths and any secrets that appeared in it. Check a file before you share it.</p>
+<h2>What appears on the page</h2>
+<p>While an export is running, the extension adds a small card to the page that shows progress (in the route that scrolls the page it also covers the page while it works), and a notice when it ends. If the companion is on, the character speaks there. The extension's own picture files are handed to the page as data for this; nothing is downloaded. The card is removed when the export ends, and nothing from the page is sent anywhere. You can turn the companion off in the popup (More options).</p>
+<h2>Permissions</h2>
+<p>Exactly two: <strong>activeTab</strong> (act on the tab you are on, only after you click the extension) and <strong>scripting</strong> (run the extension's own bundled script in that tab). It has <strong>no standing access to websites</strong>, cannot see your other tabs or your browsing history, and loads <strong>no remote code</strong>: everything it runs is in the installed package.</p>
+<h2>Tips and the Ko-fi links</h2>
+<p>The popup contains an ordinary, always visible link to Ko-fi (<a href="https://ko-fi.com/nelnel88" rel="noopener noreferrer">https://ko-fi.com/nelnel88</a>), and sometimes the companion asks politely. The extension makes no request to Ko-fi: a link only opens, in a new tab, if you click it. If you choose to tip, Ko-fi and its payment processor handle your payment under their own policies, and the maker may see what you choose to give there (for example your name, a message and the amount). That is not used to track use of the extension, and nothing about your sessions, files or usage is passed on. The extension remembers on your device only that you went to the link (see above). Tips are optional and nothing is locked.</p>
+<h2>Third parties and open-source code</h2>
+<p>No third party receives any data. The package contains one open-source library, <strong>fflate</strong> (MIT licence), used to write .zip files; its licence is in the package (<code>THIRD-PARTY-NOTICES.md</code>). This page is hosted on GitHub Pages; the extension never loads it or contacts it.</p>
+<h2>Chrome Web Store User Data Policy</h2>
+<p>The use of information handled by this extension adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements. The text of your sessions is used only to produce the file you asked for. It is not sold or transferred to third parties, not used for advertising, and not used to determine creditworthiness or for lending.</p>
+<h2>Children</h2>
+<p>The extension is not directed at children and collects nothing from anyone.</p>
+<h2>Changes</h2>
+<p>If this ever changes, this page will say so at the top, and the store listing will be updated before any version that behaves differently is published.</p>
+<h2>Contact</h2>
+<p>Questions: <a href="mailto:charmszaku@gmail.com">charmszaku@gmail.com</a></p>
+</body>
+</html>
